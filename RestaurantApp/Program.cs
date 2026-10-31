@@ -26,6 +26,16 @@ namespace RestaurantApp
             {
                 Console.WriteLine($"{item.Name} type:{item.Type} -- {item.Rate}");
             }
+
+            int totalRestaurants = restaurants.Count;
+            double averageRate = restaurants.Average(r => r.Rate);
+
+            Console.WriteLine(new string('-', 40));
+            Console.WriteLine($"จำนวนร้านทั้งหมด: {totalRestaurants} restaurant ");
+            Console.WriteLine($"ค่าเฉลี่ยคะแนนรีวิวทั้งหมด: {averageRate}");
+            Console.WriteLine(new string('-', 40));
+
+
         }
     }
     public class Restaurant
@@ -37,7 +47,10 @@ namespace RestaurantApp
 
         public Restaurant(int id, string name,string type,double rate)
         {
-
+            this.Id = id;
+            this.Name = name;
+            this.Type = type;
+            this.Rate = rate;
         }
     }
 }
